@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  time_recorded: 2019-05-03 13:27:42
+  units: MyString
+  property: one
+
+two:
+  time_recorded: 2019-05-03 13:27:42
+  units: MyString
+  property: two
