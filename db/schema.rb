@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_05_03_182742) do
   end
 
   create_table "properties", force: :cascade do |t|
+    t.string "property_area"
     t.string "property_type"
     t.datetime "year_built"
     t.string "energy_type"

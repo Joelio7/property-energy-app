@@ -1,0 +1,2 @@
+  <%= content_tag 'dashboard', nil, id:'properties', data: @properties.to_json(:include => [:energy_recordings]) %>
+
