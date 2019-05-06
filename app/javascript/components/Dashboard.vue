@@ -32,7 +32,7 @@
           </b-col>
         
       </li>
-</b-row>
+ </b-row>
     </b-container>
     </ul>
     <div class="energy-filtering">
