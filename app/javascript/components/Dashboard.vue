@@ -180,6 +180,19 @@ li {
    margin-top: 10px;
    text-align: center;
   }
+   
+  .card {
+   width: 300px;
+   height: 420px;
+   border: 1px solid black;
+   margin-top: 10px;
+   text-align: center;
+  }
+   }
+   @media only screen and (min-device-width: 768px) and (max-device-height: 1024px) {
+     ul {
+       margin-left: 62px;
+     }
    }
 
    

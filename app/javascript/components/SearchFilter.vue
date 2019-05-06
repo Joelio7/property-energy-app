@@ -74,6 +74,16 @@ export default {
        .form-inline {
         display: inline-grid;
     } 
+    
+   }
+   @media only screen and (min-device-width: 360px) and (max-device-height: 640px) {
+   h4 {
+      margin-left: 50px;
+    }
+    .form-control {
+      margin-left: 50px;
+      width: 225px;
+    }
    }
    
 
