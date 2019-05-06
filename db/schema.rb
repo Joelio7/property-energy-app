@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_05_03_182742) do
     t.string "property_type"
     t.datetime "year_built"
     t.string "energy_type"
+    t.string "photo_url"
     t.float "property_value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

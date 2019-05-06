@@ -1,7 +1,8 @@
 <template>
   <div id="app">
+    <h1>Watt-Age</h1>
+    <h4> Find out how much energy your property has used over time </h4>
     <Dashboard></Dashboard>
-    <p>{{ message }}</p>
   </div>
 </template>
 
@@ -20,8 +21,11 @@ export default {
 </script>
 
 <style scoped>
-p {
-  font-size: 2em;
+h4 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+h1 {
   text-align: center;
 }
 </style>
