@@ -6,11 +6,11 @@
       </b-col>
     </b-row> 
     <ul id="property-listings">
-      <b-container fluid>
+      <b-container>
       <b-row>
         <li v-bind:key="property.id" v-for="property in this.filteredProperties">
-         <b-col cols="12">
-        <div>
+         <b-col sm="8" md="6" lg="8" xl="12">
+        <div class="card-holder">
           <b-card
             title="Property Details"
             :img-src="property.photo_url"
@@ -167,6 +167,21 @@ li {
   width: 250px;
   height: 396px;
 }
+@media (min-width: 576px) { 
+  .card-holder {
+    width: 350px;
+    height: 420px;
+  }
+  .card {
+   width: 300px;
+   height: 420px;
+   text-align: center;
+  }
+  li {
+    margin-left: 180px;
+  }
+  
+ }
 .search-filter-space {
   text-align: center;
 }

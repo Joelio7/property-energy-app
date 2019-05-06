@@ -69,4 +69,10 @@ export default {
     padding: 20px;
     display: -webkit-inline-box;
   }
+  @media (min-width: 576px) { 
+    .form-inline{
+      display: inline-grid;
+    } 
+     
+   }
 </style>

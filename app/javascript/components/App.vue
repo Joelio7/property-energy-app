@@ -9,11 +9,6 @@
 <script>
 import Dashboard from '../components/Dashboard.vue'
 export default {
-  data: function () {
-    return {
-      message: "Hello Vue!"
-    }
-  },
   components: {
     'Dashboard': Dashboard
   }
