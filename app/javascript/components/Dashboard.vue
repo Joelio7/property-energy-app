@@ -1,33 +1,46 @@
 <template>
-  <div>
-    <SearchFilter @updateResults="addSearchFilters" :properties="properties" ></SearchFilter>
-    <div class="energy-filtering">
-      <p> start date </p>
-      <input @change="setTimesRecorded" v-model="energyReadingStartTime" type="date">
-      <p> end date </p>
-      <input @change="setTimesRecorded" v-model="energyReadingEndTime" type="date">
-    </div>
+  <div>   
+    <b-row>
+      <b-col class="search-filter-space" cols="12">
+        <SearchFilter @updateResults="addSearchFilters" :properties="properties" ></SearchFilter>
+      </b-col>
+    </b-row> 
     <ul id="property-listings">
-      <li v-bind:key="property.id" v-for="property in this.filteredProperties">
+      <b-container fluid>
+      <b-row>
+        <li v-bind:key="property.id" v-for="property in this.filteredProperties">
+         <b-col cols="12">
         <div>
           <b-card
-            :title="property.property_type"
-            img-src="https://picsum.photos/600/300/?image=25"
+            title="Property Details"
+            :img-src="property.photo_url"
             img-alt="Image"
             img-top
             tag="article"
             style="max-width: 20rem;"
             class="mb-2"
           >
+          <hr>
             <b-card-text>
-              {{property.energy_type}}
-              {{property.energy_recordings.filter(e => filterEnergyReadingsByTime(e.time_recorded)).map(record => record.units).reduce((partial_sum, a) => partial_sum + a,0)}}
+              <p> <b> Property Type: </b> {{property.property_type}} </p>
+              <p> <b> Energy Class: </b> {{property.energy_type}} </p>
+              <p> <b> Energy Used: </b> {{property.energy_recordings.filter(e => filterEnergyReadingsByTime(e.time_recorded)).map(record => record.units).reduce((partial_sum, a) => partial_sum + a,0)}} kWh </p>
+              <p> <b> Neighborhood: </b> {{property.property_area}} </p>
             </b-card-text>
           </b-card>
         </div>
+          </b-col>
+        
       </li>
+</b-row>
+    </b-container>
     </ul>
-    <EnergyChart :monthlyEnergyReadings="totalEnergyReadingsByMonth"></EnergyChart>
+    <div class="energy-filtering">
+      <p>Set a start and end date to calculate total energy usage for a given time period: </p>
+      <input @change="setTimesRecorded" v-model="energyReadingStartTime" type="date">
+      <input @change="setTimesRecorded" v-model="energyReadingEndTime" type="date">
+      <EnergyChart :monthlyEnergyReadings="totalEnergyReadingsByMonth"></EnergyChart>
+    </div>
   </div>
 </template>
 
@@ -138,8 +151,30 @@ export default {
 </script>
 
 <style scoped>
-p {
-  font-size: 2em;
+li {
+  list-style-type: none;
+}
+.b-card-text {
+  text-align: left;
+}
+.card-title {
   text-align: center;
 }
+.card-img-top {
+  height: 133px;
+}
+.card {
+  width: 250px;
+  height: 396px;
+}
+.search-filter-space {
+  text-align: center;
+}
+.container-fluid {
+  padding-left: 85px;
+}
+.energy-filtering {
+  text-align: center;
+}
+
 </style>

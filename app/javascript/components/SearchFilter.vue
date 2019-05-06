@@ -1,20 +1,18 @@
 <template>
   <div>
-    <b-form>
-      <b-form-group
-        id="input-group-1"
-        label="property area"
-        label-for="input-1"
-        description="search by neighborhood"
-      >
+    <h4>Filter Properties By:</h4>
+    <b-form inline>
         <b-form-input
           @keyup="filterResults()"
           id="input-1"
+          class="form-control"
           v-model="conditions.property_area"
           required
           placeholder="Search By Neighborhood"
-        ></b-form-input>
-      </b-form-group>
+        >
+        </b-form-input>
+      <b-form-select  @change="filterResults()" placeholder="energy type" v-model="conditions.energy_type" :options="[ { value: null, text: 'Energy Source' }, { value: 'solar', text: 'Solar' }, { value: 'gas', text: 'Gas' }, { value: 'electric', text: 'Electric' },]" class="form-control"></b-form-select>
+      <b-form-select @change="filterResults()" placeholder="housing type" v-model="conditions.property_type" :options="[ { value: null, text: 'Property Type' }, { value: 'house', text: 'House' }, { value: 'apartment', text: 'Apartment' }, { value: 'condo', text: 'Condo' },]" class="form-control"></b-form-select>
     </b-form>
   </div>
 </template>
@@ -25,7 +23,9 @@ export default {
   data: function () {
     return {
       conditions: {
-        property_area: ''
+        property_area: '',
+        property_type: null,
+        energy_type: null
       }
     }
   },
@@ -34,6 +34,12 @@ export default {
       let conditions = {}
       if (this.conditions.property_area) {
         conditions.property_area = this.conditions.property_area
+      }
+      if (this.conditions.property_type) {
+        conditions.property_type = this.conditions.property_type
+      }
+      if (this.conditions.energy_type) {
+        conditions.energy_type = this.conditions.energy_type
       }
       console.log(conditions)
       let objectsToSearch = this.properties
@@ -56,4 +62,11 @@ export default {
 </script>
 
 <style scoped>
+  #input-1 {
+    width: 225px;
+  }
+  .form-inline {
+    padding: 20px;
+    display: -webkit-inline-box;
+  }
 </style>

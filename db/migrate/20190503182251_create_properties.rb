@@ -5,6 +5,7 @@ class CreateProperties < ActiveRecord::Migration[5.2]
       t.string :property_type
       t.timestamp :year_built
       t.string :energy_type
+      t.string :photo_url
       t.float :property_value
 
       t.timestamps
