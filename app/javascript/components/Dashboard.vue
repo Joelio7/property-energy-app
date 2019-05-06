@@ -168,8 +168,8 @@ li {
   height: 396px;
 }
 
-   @media only screen and (min-device-width: 360px) and (max-device-height: 823px) {
-       .card-holder {
+   @media only screen and (min-device-width: 360px) and (max-device-height: 685px) {
+  .card-holder {
     width: 350px;
     height: 420px;
   }

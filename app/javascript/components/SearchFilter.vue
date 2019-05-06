@@ -70,21 +70,24 @@ export default {
     display: -webkit-inline-box;
   }
  
-    @media only screen and (min-device-width: 360px) and (max-device-height: 823px) {
+     @media (max-width: 576px) {
        .form-inline {
         display: inline-grid;
-    } 
-    
-   }
-   @media only screen and (min-device-width: 360px) and (max-device-height: 640px) {
-   h4 {
-      margin-left: 50px;
+       }
+       h4 {
+      margin-right: 40px;
     }
     .form-control {
-      margin-left: 50px;
+      margin-right: 50px;
       width: 225px;
     }
-   }
+    select {
+      margin-top: 10px;
+    }
+    } 
+    
+   
+   
    
 
 </style>

@@ -24,13 +24,13 @@ h5 {
 h1 {
   text-align: center;
 }
-@media only screen and (min-device-width: 360px) and (max-device-height: 640px) {
-    h5 {
-  margin-left: 50px;
+@media (max-width: 576px) {
+   h5  {
+     margin-right: 50px;
   margin-bottom: 50px;
 }
 h1 {
-  margin-left: 50px;
+  margin-right: 20px;
   text-align: center;
 }
    }
