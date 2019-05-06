@@ -9,7 +9,7 @@
       <b-container>
       <b-row>
         <li v-bind:key="property.id" v-for="property in this.filteredProperties">
-         <b-col >
+         <b-col sm="12">
         <div class="card-holder">
           <b-card
             title="Property Details"
@@ -167,23 +167,8 @@ li {
   width: 250px;
   height: 396px;
 }
-@media only screen and (min-device-width: 360px) and (max-device-height: 640px) {
-    .card-holder {
-    width: 400px;
-    height: 420px;
-  }
-  .card {
-   width: 400px;
-   height: 420px;
-   border: 1px solid black;
-   margin-top: 10px;
-   text-align: center;
-  }
-  li {
-    margin-left: 180px;
-  }
-   }
-   @media only screen and (min-device-width: 411px) and (max-device-height: 731px) {
+
+   @media only screen and (min-device-width: 360px) and (max-device-height: 823px) {
        .card-holder {
     width: 350px;
     height: 420px;
@@ -195,10 +180,11 @@ li {
    margin-top: 10px;
    text-align: center;
   }
-  li {
-    margin-left: 180px;
-  }
    }
+
+   
+  
+   
 
  
   
@@ -206,9 +192,7 @@ li {
 .search-filter-space {
   text-align: center;
 }
-.container-fluid {
-  padding-left: 85px;
-}
+
 .energy-filtering {
   text-align: center;
 }

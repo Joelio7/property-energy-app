@@ -70,15 +70,11 @@ export default {
     display: -webkit-inline-box;
   }
  
-    @media only screen and (min-device-width: 360px) and (max-device-height: 640px) {
+    @media only screen and (min-device-width: 360px) and (max-device-height: 823px) {
        .form-inline {
         display: inline-grid;
     } 
    }
-   @media only screen and (min-device-width: 411px) and (max-device-height: 731px) {
-       .form-inline {
-        display: inline-grid;
-    } 
-   }
+   
 
 </style>
