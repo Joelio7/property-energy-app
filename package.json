@@ -6,10 +6,14 @@
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.0-rc.19",
     "chart.js": "^2.8.0",
+    "css-loader": "*",
+    "jquery": "1.9.1",
+    "popper.js": "^1.14.7",
     "vue": "^2.6.10",
     "vue-chartjs": "^3.4.2",
     "vue-loader": "^15.7.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.1.0"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.3.1"
