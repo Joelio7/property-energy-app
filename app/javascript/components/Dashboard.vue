@@ -7,35 +7,34 @@
     </b-row> 
     <ul id="property-listings">
       <b-container>
-      <b-row>
-        <li v-bind:key="property.id" v-for="property in this.filteredProperties">
-         <b-col sm="12">
-        <div class="card-holder">
-          <b-card
-            title="Property Details"
-            :img-src="property.photo_url"
-            img-alt="Image"
-            img-top
-            tag="article"
-            style="max-width: 20rem;"
-            class="mb-2"
-          >
-          <hr>
-            <b-card-text>
-              <p> <b> Property Type: </b> {{property.property_type}} </p>
-              <p> <b> Energy Class: </b> {{property.energy_type}} </p>
-              <p> <b> Energy Used: </b> {{property.energy_recordings.filter(e => filterEnergyReadingsByTime(e.time_recorded)).map(record => record.units).reduce((partial_sum, a) => partial_sum + a,0)}} kWh </p>
-              <p> <b> Neighborhood: </b> {{property.property_area}} </p>
-            </b-card-text>
-          </b-card>
-        </div>
-          </b-col>
-        
-      </li>
- </b-row>
-    </b-container>
+        <b-row>
+          <li v-bind:key="property.id" v-for="property in this.filteredProperties">
+            <b-col sm="12">
+              <div class="card-holder">
+                <b-card
+                  title="Property Details"
+                  :img-src="property.photo_url"
+                  img-alt="Image"
+                  img-top
+                  tag="article"
+                  style="max-width: 20rem;"
+                  class="mb-2"
+                >
+                  <hr>
+                  <b-card-text>
+                    <p> <b> Property Type: </b> {{property.property_type}} </p>
+                    <p> <b> Energy Class: </b> {{property.energy_type}} </p>
+                    <p> <b> Energy Used: </b> {{property.energy_recordings.filter(e => filterEnergyReadingsByTime(e.time_recorded)).map(record => record.units).reduce((partial_sum, a) => partial_sum + a,0)}} kWh </p>
+                    <p> <b> Neighborhood: </b> {{property.property_area}} </p>
+                  </b-card-text>
+                </b-card>
+              </div>
+            </b-col>
+          </li>
+        </b-row>
+      </b-container>
     </ul>
-    <div class="energy-filtering">
+    <div height="300" class="energy-filtering">
       <p>Set a start and end date to calculate total energy usage for a given time period: </p>
       <input @change="setTimesRecorded" v-model="energyReadingStartTime" type="date">
       <input @change="setTimesRecorded" v-model="energyReadingEndTime" type="date">
@@ -167,8 +166,7 @@ li {
   width: 250px;
   height: 396px;
 }
-
-   @media only screen and (min-device-width: 360px) and (max-device-height: 685px) {
+@media only screen and (min-device-width: 360px) and (max-device-height: 685px) {
   .card-holder {
     width: 350px;
     height: 420px;
@@ -180,7 +178,6 @@ li {
    margin-top: 10px;
    text-align: center;
   }
-   
   .card {
    width: 300px;
    height: 420px;
@@ -188,26 +185,29 @@ li {
    margin-top: 10px;
    text-align: center;
   }
-   }
-   @media only screen and (min-device-width: 768px) and (max-device-height: 1024px) {
-     ul {
-       margin-left: 62px;
-     }
-   }
-
-   
-  
-   
-
- 
-  
- 
+  .energy-filtering {
+    width: 300px;
+    margin-left: 50px;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-height: 1024px) {
+  ul {
+     margin-left: 62px;
+  }
+}
+@media (max-width: 576px) {
+  .energy-filtering {
+    width: 300px;
+    margin-left: 50px;
+  }
+} 
 .search-filter-space {
   text-align: center;
 }
-
 .energy-filtering {
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
+  width: 90%;
 }
-
 </style>
